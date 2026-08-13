@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Sparkles, 
   Medal, 
   Heart, 
   Flag, 
   TrendingUp, 
-  BarChart2, 
   Share2, 
   MessageSquare, 
   Users, 
   Award,
-  Image,
-  Video,
   Star,
   Mail,
   Phone,
-  MapPin,
   Instagram,
   Facebook,
-  ExternalLink
+  ExternalLink,
+  Code,
+  Megaphone,
+  FileText,
+  Layers,
+  Lightbulb,
+  CheckCircle,
+  Target
 } from 'lucide-react';
 
 function Logo() {
@@ -36,32 +39,36 @@ function Logo() {
 
 function ServiceCard({ title, description, icon: Icon, color }) {
   return (
-    <div className="service-card card-hover bg-white rounded-2xl p-8 relative group">
-      <Icon className={`w-12 h-12 text-${color}-600 mb-6 group-hover:scale-110 transition-transform`} />
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="service-card card-hover bg-white rounded-2xl p-8 relative group border border-purple-50/60 shadow-sm hover:shadow-xl transition-all">
+      <div className={`w-14 h-14 rounded-2xl bg-${color}-50 flex items-center justify-center mb-6 text-${color}-600 group-hover:scale-110 transition-transform`}>
+        <Icon className="w-7 h-7" />
+      </div>
+      <h3 className="text-xl font-bold mb-3 text-gray-800">{title}</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
 
 function PlanCard({ title, description, features, onSelect }) {
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all pricing-card">
-      <h3 className="text-2xl font-bold mb-4 text-gradient">{title}</h3>
-      <p className="text-gray-600 mb-6">{description}</p>
-      <ul className="space-y-4 mb-8">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <span className="text-purple-600 mt-1">
-              <Star className="w-5 h-5" />
-            </span>
-            <span className="text-gray-700">{feature}</span>
-          </li>
-        ))}
-      </ul>
+    <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all pricing-card border border-purple-50/60 flex flex-col justify-between">
+      <div>
+        <h3 className="text-2xl font-bold mb-3 text-gradient">{title}</h3>
+        <p className="text-gray-600 text-sm mb-6">{description}</p>
+        <ul className="space-y-4 mb-8">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-start gap-3 text-sm">
+              <span className="text-purple-600 mt-1 shrink-0">
+                <Star className="w-4 h-4" />
+              </span>
+              <span className="text-gray-700">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <button
         onClick={onSelect}
-        className="w-full button-gradient bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+        className="w-full button-gradient bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white px-6 py-3.5 rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all"
       >
         Elegir Plan
       </button>
@@ -91,7 +98,7 @@ function App() {
       title: "Plan Profesional",
       description: "Perfecto para empresas en crecimiento que buscan expandir su alcance",
       features: [
-        "Gestión de 4 redes sociales",
+        "Gestión de 3 redes sociales",
         "8 publicaciones semanales",
         "Diseño profesional de contenido",
         "Estrategia de contenido personalizada",
@@ -122,9 +129,9 @@ function App() {
       color: "purple"
     },
     {
-      icon: BarChart2,
-      title: "Análisis de Datos",
-      description: "Medición y análisis de resultados para optimizar tus campañas.",
+      icon: Code,
+      title: "Desarrollo Web",
+      description: "Creación de sitios web profesionales y optimizados para tu negocio.",
       color: "pink"
     },
     {
@@ -134,21 +141,21 @@ function App() {
       color: "emerald"
     },
     {
-      icon: MessageSquare,
-      title: "Contenido Digital",
-      description: "Creación de contenido relevante y atractivo.",
+      icon: Megaphone,
+      title: "Campañas Publicitarias",
+      description: "Diseño y ejecución de campañas publicitarias efectivas.",
       color: "purple"
     },
     {
-      icon: Users,
-      title: "Community Management",
-      description: "Gestión efectiva de tu comunidad online.",
+      icon: FileText,
+      title: "Content Manager",
+      description: "Gestión y creación de contenido estratégico para tu marca.",
       color: "pink"
     },
     {
-      icon: Award,
-      title: "Branding Digital",
-      description: "Desarrollo y fortalecimiento de tu marca.",
+      icon: Layers,
+      title: "Planes de Contenido",
+      description: "Estrategias de contenido personalizadas para cada plataforma.",
       color: "emerald"
     }
   ];
@@ -160,11 +167,11 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
           <nav className="hidden md:flex gap-6">
-            {['inicio', 'nosotros', 'servicios', 'portafolio', 'planes', 'contacto'].map((item) => (
+            {['inicio', 'nosotros', 'servicios', 'planes', 'contacto'].map((item) => (
               <a 
                 key={item}
                 href={`#${item}`} 
-                className="nav-link text-gray-600 hover:text-purple-600 transition-colors"
+                className="nav-link text-gray-600 hover:text-purple-600 transition-colors text-sm font-medium"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
@@ -193,78 +200,151 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-32 px-4" id="nosotros">
+      {/* Nuestra Historia / About Us Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-purple-50/20 via-white to-pink-50/20" id="nosotros">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-sm font-medium px-6 py-2 rounded-full inline-block animate-float">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block shadow-sm">
               ACERCA DE NOSOTROS
             </span>
-            <p className="text-gray-600 mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mt-4 mb-4">
+              Nuestra Historia
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
               Somos una agencia de marketing que será tu amiga y aliada para el crecimiento de tu marca o empresa, 
               que estudia y propone las estrategias del marketing para alcanzar los objetivos deseados con la 
               innovación y creatividad.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="card-hover bg-white rounded-2xl p-8 text-center">
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
-                <Medal className="w-10 h-10 text-purple-600" />
+          {/* Misión y Visión */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white rounded-3xl p-8 shadow-lg shadow-purple-500/5 border border-purple-50/60 hover:shadow-xl transition-all">
+              <div className="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600">
+                <Flag className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gradient">Misión</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Posicionar la innovación en marketing de marca o empresa. Además, brindar los servicios 
-                personalizados a cada marca para poder guiar, proyectar y destacar sus propósitos en el mercado.
+              <h3 className="text-xl font-bold mb-3 text-purple-700">Nuestra Misión</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Potenciar el éxito digital de nuestros clientes a través de estrategias innovadoras y personalizadas, creando conexiones significativas entre marcas y sus audiencias.
               </p>
             </div>
 
-            <div className="card-hover bg-white rounded-2xl p-8 text-center">
-              <div className="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
-                <Heart className="w-10 h-10 text-pink-600" />
+            <div className="bg-white rounded-3xl p-8 shadow-lg shadow-purple-500/5 border border-purple-50/60 hover:shadow-xl transition-all">
+              <div className="w-12 h-12 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 text-pink-600">
+                <Lightbulb className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gradient">Valores</h3>
-              <ul className="text-gray-600 space-y-3">
-                <li className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  Innovación
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  Transparencia
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  Compromiso
-                </li>
-              </ul>
+              <h3 className="text-xl font-bold mb-3 text-pink-700">Nuestra Visión</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ser la agencia líder en transformación digital en República Dominicana, reconocida por nuestra excelencia creativa, resultados medibles y compromiso con el éxito de nuestros clientes.
+              </p>
+            </div>
+          </div>
+
+          {/* Estrategias, Valores y Objetivos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: Pilares */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg shadow-purple-500/5 border border-purple-50/60 space-y-6">
+              <div>
+                <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-3">
+                  <Share2 className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-gray-800 text-sm mb-1">Estrategias Personalizadas</h4>
+                <p className="text-xs text-gray-500">Soluciones adaptadas a cada cliente</p>
+              </div>
+
+              <div>
+                <div className="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 mb-3">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-gray-800 text-sm mb-1">Resultados Medibles</h4>
+                <p className="text-xs text-gray-500">Análisis detallado del desempeño</p>
+              </div>
+
+              <div>
+                <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-3">
+                  <MessageSquare className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-gray-800 text-sm mb-1">Soporte Continuo</h4>
+                <p className="text-xs text-gray-500">Atención personalizada 24/7</p>
+              </div>
             </div>
 
-            <div className="card-hover bg-white rounded-2xl p-8 text-center">
-              <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
-                <Flag className="w-10 h-10 text-emerald-600" />
+            {/* Card 2: Nuestros Valores */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg shadow-purple-500/5 border border-purple-50/60">
+              <h3 className="text-lg font-bold mb-6 text-purple-700 text-center">Nuestros Valores</h3>
+              <div className="space-y-4 text-xs">
+                <div className="bg-purple-50/50 p-4 rounded-2xl">
+                  <h4 className="font-bold text-purple-700 mb-1">Innovación</h4>
+                  <p className="text-gray-600">Buscamos constantemente nuevas formas de mejorar y crecer.</p>
+                </div>
+                <div className="bg-pink-50/50 p-4 rounded-2xl">
+                  <h4 className="font-bold text-pink-700 mb-1">Transparencia</h4>
+                  <p className="text-gray-600">Comunicación clara y honesta en todo momento.</p>
+                </div>
+                <div className="bg-emerald-50/50 p-4 rounded-2xl">
+                  <h4 className="font-bold text-emerald-700 mb-1">Compromiso</h4>
+                  <p className="text-gray-600">Dedicación total al éxito de nuestros clientes.</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gradient">Visión</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ser ideales para nuestros clientes y referentes de marketing.
-              </p>
+            </div>
+
+            {/* Card 3: Nuestros Objetivos */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg shadow-purple-500/5 border border-purple-50/60">
+              <h3 className="text-lg font-bold mb-6 text-emerald-700 text-center">Nuestros Objetivos</h3>
+              <div className="space-y-4 text-xs">
+                <div className="bg-emerald-50/40 p-4 rounded-2xl text-gray-600 leading-relaxed">
+                  Impulsar el crecimiento sostenible de nuestros clientes en el entorno digital.
+                </div>
+                <div className="bg-purple-50/40 p-4 rounded-2xl text-gray-600 leading-relaxed">
+                  Crear estrategias innovadoras que generen resultados tangibles.
+                </div>
+                <div className="bg-pink-50/40 p-4 rounded-2xl text-gray-600 leading-relaxed">
+                  Establecer relaciones duraderas basadas en la confianza y el éxito mutuo.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Biografía de la Fundadora Section */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+            NUESTRA FUNDADORA
+          </span>
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-600 mb-12">
+            Biografía de la Fundadora
+          </h2>
+
+          <div className="relative w-56 h-56 mx-auto mb-8">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-emerald-400 p-1.5 shadow-xl animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                alt="Emily Y. Morales Nova" 
+                className="w-full h-full object-cover rounded-full border-4 border-white"
+              />
+            </div>
+          </div>
+
+          <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
+            Conoce a la mente creativa detrás de Market Chic, una visionaria del marketing digital que está transformando la industria en República Dominicana. Con una sólida formación académica y años de experiencia en el campo, nuestra fundadora lidera con pasión y compromiso el crecimiento digital de nuestros clientes.
+          </p>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section className="py-32 px-4 bg-gradient-to-br from-purple-50 via-pink-50 to-emerald-50" id="servicios">
+      <section className="py-24 px-4 bg-gradient-to-br from-purple-50/40 via-pink-50/40 to-emerald-50/40" id="servicios">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-sm font-medium px-6 py-2 rounded-full inline-block animate-float">
-              SERVICIOS
+            <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+              NUESTROS SERVICIOS
             </span>
-            <h2 className="text-4xl font-bold mt-6 mb-4 text-gradient">
-              Nuestros Servicios
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
+              Soluciones Digitales Completas
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Ofrecemos soluciones integrales de marketing digital para impulsar tu presencia online.
+            <p className="text-gray-600 max-w-2xl mx-auto text-base">
+              Ofrecemos una gama completa de servicios diseñados para impulsar tu presencia digital y alcanzar tus objetivos de negocio.
             </p>
           </div>
 
@@ -277,16 +357,16 @@ function App() {
       </section>
 
       {/* Plans Section */}
-      <section className="py-32 px-4" id="planes">
+      <section className="py-24 px-4 bg-white" id="planes">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-sm font-medium px-6 py-2 rounded-full inline-block animate-float">
-              PLANES
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+              NUESTROS PLANES
             </span>
-            <h2 className="text-4xl font-bold mt-6 mb-4 text-gradient">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
               Nuestros Planes
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base">
               Selecciona el plan que mejor se adapte a tus necesidades y objetivos
             </p>
           </div>
@@ -342,8 +422,8 @@ function App() {
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold text-gray-800">Teléfonos</h4>
-                    <p className="text-xs text-gray-500">809-427-8761</p>
-                    <p className="text-xs text-gray-500">829-320-0032</p>
+                    <a href="tel:+18094278761" className="text-xs text-gray-500 block hover:text-purple-600 transition-colors">809-427-8761</a>
+                    <a href="tel:+18293200032" className="text-xs text-gray-500 block hover:text-purple-600 transition-colors">829-320-0032</a>
                   </div>
                 </div>
 
@@ -353,7 +433,7 @@ function App() {
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold text-gray-800">WhatsApp</h4>
-                    <a href="https://wa.me/18094278761" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-purple-600 transition-colors">
+                    <a href="https://wa.me/message/SKONPMVANVZAA1" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-purple-600 transition-colors">
                       Envíanos un mensaje
                     </a>
                   </div>
@@ -363,13 +443,13 @@ function App() {
               <div>
                 <h4 className="text-xs font-semibold text-gray-800 mb-3">Síguenos en Redes Sociales</h4>
                 <div className="flex items-center gap-3">
-                  <a href="https://instagram.com/_marketchicdr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <a href="https://www.instagram.com/_marketchicdr/profilecard/?igsh=d3puZWU4bWE0NDNw" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
                     <Instagram className="w-4 h-4" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <a href="https://m.facebook.com/Marvelouschic" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
                     <Facebook className="w-4 h-4" />
                   </a>
-                  <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <a href="https://www.tiktok.com/@marketchic" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
                     <span className="font-bold text-xs">d</span>
                   </a>
                 </div>
@@ -388,7 +468,9 @@ function App() {
               </div>
 
               <a
-                href="mailto:marketchicdr@gmail.com?subject=Consulta Gratuita"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe-0iPq32jK4i1G93B74T-Y90X84f2B_mY7T9P3k-4573854/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 text-white py-3.5 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-95 shadow-lg shadow-purple-500/20 transition-all text-center"
               >
                 Solicitar Consulta Gratuita
@@ -409,16 +491,16 @@ function App() {
                 Transformando negocios a través de marketing digital innovador y estratégico.
               </p>
               <div className="flex items-center gap-2.5 mt-5">
-                <a href="https://instagram.com/_marketchicdr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                <a href="https://www.instagram.com/_marketchicdr/profilecard/?igsh=d3puZWU4bWE0NDNw" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
                   <Instagram className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                <a href="https://m.facebook.com/Marvelouschic" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
                   <Facebook className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
+                <a href="https://www.tiktok.com/@marketchic" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
                   <span className="font-bold text-xs">d</span>
                 </a>
-                <a href="https://wa.me/18094278761" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                <a href="https://wa.me/message/SKONPMVANVZAA1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
                   <MessageSquare className="w-3.5 h-3.5" />
                 </a>
               </div>
