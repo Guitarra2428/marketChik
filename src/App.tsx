@@ -26,13 +26,15 @@ import {
 
 function Logo() {
   return (
-    <div className="flex items-center gap-3">
-      <img 
-        src="/logo.png" 
-        onError={(e) => { e.currentTarget.src = "https://i.ibb.co/JjrJtDC/logo.png"; }}
-        alt="Market Chic Logo" 
-        className="w-10 h-10 object-contain rounded-full shadow-sm"
-      />
+    <div className="flex items-center gap-3 animate-float">
+      <div className="w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-purple-600 via-pink-500 to-emerald-400 shadow-md flex items-center justify-center shrink-0">
+        <img 
+          src="/logo.png" 
+          onError={(e) => { e.currentTarget.src = "https://i.ibb.co/JjrJtDC/logo.png"; }}
+          alt="Market Chic Logo" 
+          className="w-full h-full object-cover rounded-full bg-white"
+        />
+      </div>
       <span className="text-2xl font-bold text-gradient">
         Market Chic
       </span>
@@ -207,10 +209,10 @@ function App() {
       <section className="py-24 px-4 bg-gradient-to-b from-purple-50/20 via-white to-pink-50/20" id="nosotros">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block shadow-sm">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block shadow-sm animate-float">
               ACERCA DE NOSOTROS
             </span>
-            <h2 className="text-4xl font-extrabold animate-text-gradient mt-4 mb-4">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mt-4 mb-4">
               Nuestra Historia
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
@@ -313,10 +315,10 @@ function App() {
       {/* Biografía de la Fundadora Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+          <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm animate-float">
             NUESTRA FUNDADORA
           </span>
-          <h2 className="text-4xl font-extrabold animate-text-gradient mb-12">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-600 mb-12">
             Biografía de la Fundadora
           </h2>
 
@@ -341,10 +343,10 @@ function App() {
       <section className="py-24 px-4 bg-gradient-to-br from-purple-50/40 via-pink-50/40 to-emerald-50/40" id="servicios">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+            <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm animate-float">
               NUESTROS SERVICIOS
             </span>
-            <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
               Soluciones Digitales Completas
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base">
@@ -364,10 +366,10 @@ function App() {
       <section className="py-24 px-4 bg-white" id="planes">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm animate-float">
               NUESTROS PLANES
             </span>
-            <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
               Nuestros Planes
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base">
@@ -390,10 +392,10 @@ function App() {
       {/* Contact Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-white via-pink-50/30 to-purple-50/40 relative" id="contacto">
         <div className="max-w-6xl mx-auto text-center">
-          <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+          <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm animate-float">
             CONTÁCTANOS
           </span>
-          <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
             ¿Listo para Comenzar?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm mb-12">
