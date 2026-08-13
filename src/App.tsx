@@ -15,15 +15,20 @@ import {
   Star,
   Mail,
   Phone,
-  MapPin
+  MapPin,
+  Instagram,
+  Facebook,
+  ExternalLink
 } from 'lucide-react';
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2 animate-float">
-      <Sparkles className="w-8 h-8 text-purple-600" />
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full border-2 border-purple-500 bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+        M
+      </div>
       <span className="text-2xl font-bold text-gradient">
-        MarketChic
+        Market Chic
       </span>
     </div>
   );
@@ -299,107 +304,173 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-32 px-4 gradient-background relative" id="contacto">
-        <div className="absolute inset-0 bg-gradient-radial from-white/50 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <span className="bg-white text-purple-600 text-sm font-medium px-6 py-2 rounded-full inline-block animate-float">
-              CONTACTO
-            </span>
-            <h2 className="text-4xl font-bold mt-6 mb-4 text-white">
-              ¿Listo para empezar?
-            </h2>
-            <p className="text-white/90 max-w-2xl mx-auto text-lg">
-              Contáctanos hoy mismo para comenzar a transformar tu presencia digital.
-            </p>
-          </div>
+      <section className="py-24 px-4 bg-gradient-to-b from-white via-pink-50/30 to-purple-50/40 relative" id="contacto">
+        <div className="max-w-6xl mx-auto text-center">
+          <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+            CONTÁCTANOS
+          </span>
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
+            ¿Listo para Comenzar?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm mb-12">
+            Agenda una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.
+          </p>
 
-          <div className="max-w-lg mx-auto">
-            <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-xl">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 text-gray-700">
-                  <Mail className="w-6 h-6 text-purple-600" />
-                  <a href="mailto:marketchicdr@gmail.com" className="hover:text-purple-600 transition-colors">
-                    marketchicdr@gmail.com
-                  </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+            {/* Card 1: Información de Contacto */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl shadow-purple-500/5 border border-purple-50/50 hover:shadow-2xl transition-all">
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 mb-6">
+                Información de Contacto
+              </h3>
+              
+              <div className="space-y-5 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold text-gray-800">Correo Electrónico</h4>
+                    <a href="mailto:marketchicdr@gmail.com" className="text-xs text-gray-500 hover:text-purple-600 transition-colors">
+                      marketchicdr@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 text-gray-700">
-                  <Phone className="w-6 h-6 text-purple-600" />
-                  <a href="tel:+18094270000" className="hover:text-purple-600 transition-colors">
-                    809-427-8761
-                  </a>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold text-gray-800">Teléfonos</h4>
+                    <p className="text-xs text-gray-500">809-427-8761</p>
+                    <p className="text-xs text-gray-500">829-320-0032</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 text-gray-700">
-                  <MapPin className="w-6 h-6 text-purple-600" />
-                  <span>
-                    Calle Bienvenido Creales #87, Centro de la Ciudad, La Romana, República Dominicana
-                  </span>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                    <MessageSquare className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold text-gray-800">WhatsApp</h4>
+                    <a href="https://wa.me/18094278761" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-purple-600 transition-colors">
+                      Envíanos un mensaje
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <div>
+                <h4 className="text-xs font-semibold text-gray-800 mb-3">Síguenos en Redes Sociales</h4>
+                <div className="flex items-center gap-3">
+                  <a href="https://instagram.com/_marketchicdr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
+                    <span className="font-bold text-xs">d</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Agenda una Consulta Gratuita */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl shadow-purple-500/5 border border-purple-50/50 flex flex-col justify-between hover:shadow-2xl transition-all">
+              <div>
+                <h3 className="text-xl font-bold text-emerald-600 mb-4">
+                  Agenda una Consulta Gratuita
+                </h3>
+                <p className="text-xs text-gray-600 leading-relaxed mb-6">
+                  Evaluaremos tu emprendimiento o marca personal sin costo. Completa el formulario y nos pondremos en contacto contigo.
+                </p>
+              </div>
+
+              <a
+                href="mailto:marketchicdr@gmail.com?subject=Consulta Gratuita"
+                className="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 text-white py-3.5 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-95 shadow-lg shadow-purple-500/20 transition-all text-center"
+              >
+                Solicitar Consulta Gratuita
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-20">
+      <footer className="bg-emerald-50/30 border-t border-emerald-100/50 text-gray-600 py-16 text-xs">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div>
               <Logo />
-              <p className="mt-6 text-gray-400 leading-relaxed">
-                Tu aliado en el crecimiento digital. Transformamos marcas con estrategias innovadoras.
+              <p className="mt-4 text-gray-500 leading-relaxed max-w-xs">
+                Transformando negocios a través de marketing digital innovador y estratégico.
               </p>
+              <div className="flex items-center gap-2.5 mt-5">
+                <a href="https://instagram.com/_marketchicdr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <Instagram className="w-3.5 h-3.5" />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <Facebook className="w-3.5 h-3.5" />
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <span className="font-bold text-xs">d</span>
+                </a>
+                <a href="https://wa.me/18094278761" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
+                  <MessageSquare className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
+
             <div>
-              <h4 className="text-lg font-semibold mb-6">Enlaces</h4>
-              <ul className="space-y-4">
-                {['inicio', 'nosotros', 'servicios', 'planes', 'contacto'].map((item) => (
-                  <li key={item}>
-                    <a 
-                      href={`#${item}`} 
-                      className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
-                    >
-                      <span className="w-2 h-2 bg-purple-500 rounded-full group-hover:w-3 transition-all"></span>
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </a>
-                  </li>
-                ))}
+              <h4 className="font-bold text-emerald-600 mb-4">Enlaces Rápidos</h4>
+              <ul className="space-y-2.5 text-gray-500">
+                <li><a href="#inicio" className="hover:text-purple-600 transition-colors">Inicio</a></li>
+                <li><a href="#nosotros" className="hover:text-purple-600 transition-colors">Nosotros</a></li>
+                <li><a href="#servicios" className="hover:text-purple-600 transition-colors">Servicios</a></li>
+                <li><a href="#planes" className="hover:text-purple-600 transition-colors">Planes</a></li>
+                <li><a href="#contacto" className="hover:text-purple-600 transition-colors">Contacto</a></li>
               </ul>
             </div>
+
             <div>
-              <h4 className="text-lg font-semibold mb-6">Servicios</h4>
-              <ul className="space-y-4">
-                {['Marketing Digital', 'Redes Sociales', 'Análisis de Datos', 'Branding Digital'].map((service) => (
-                  <li key={service}>
-                    <span className="text-gray-400 flex items-center gap-2">
-                      <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                      {service}
-                    </span>
-                  </li>
-                ))}
+              <h4 className="font-bold text-emerald-600 mb-4">Servicios</h4>
+              <ul className="space-y-2.5 text-gray-500">
+                <li>Marketing Digital</li>
+                <li>Desarrollo Web</li>
+                <li>Redes Sociales</li>
+                <li>Campañas Publicitarias</li>
+                <li>Content Manager</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="text-lg font-semibold mb-6">Contacto</h4>
-              <ul className="space-y-4">
-                <li className="text-gray-400 flex items-center gap-3">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              <h4 className="font-bold text-emerald-600 mb-4">Contacto</h4>
+              <ul className="space-y-2.5 text-gray-500">
+                <li className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                   marketchicdr@gmail.com
                 </li>
-                <li className="text-gray-400 flex items-center gap-3">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                   809-427-8761
                 </li>
-                <li className="text-gray-400 flex items-center gap-3">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                  La Romana, RD
+                <li className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  829-320-0032
                 </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400">
+
+          <div className="border-t border-gray-200/60 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500">
             <p>&copy; {new Date().getFullYear()} Market Chic. Todos los derechos reservados.</p>
+            <div className="flex items-center gap-6">
+              <a href="#" className="hover:text-purple-600 transition-colors">Términos y Condiciones</a>
+              <a href="#" className="hover:text-purple-600 transition-colors">Política de Privacidad</a>
+            </div>
           </div>
         </div>
       </footer>
