@@ -27,9 +27,12 @@ import {
 function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-full border-2 border-purple-500 bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
-        M
-      </div>
+      <img 
+        src="/logo.png" 
+        onError={(e) => { e.currentTarget.src = "https://i.ibb.co/JjrJtDC/logo.png"; }}
+        alt="Market Chic Logo" 
+        className="w-10 h-10 object-contain rounded-full shadow-sm"
+      />
       <span className="text-2xl font-bold text-gradient">
         Market Chic
       </span>
@@ -163,7 +166,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
           <nav className="hidden md:flex gap-6">
@@ -181,18 +184,18 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="gradient-background py-32 relative overflow-hidden" id="inicio">
-        <div className="absolute inset-0 bg-gradient-radial from-white/50 to-transparent"></div>
+      <section className="bg-gradient-to-r from-pink-500 via-purple-600 to-purple-700 py-32 relative overflow-hidden text-white" id="inicio">
+        <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent pointer-events-none"></div>
         <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-6xl font-bold mb-6 text-white">
+          <h1 className="text-6xl font-extrabold mb-6 text-white tracking-tight">
             Tu Aliado en Marketing Digital
           </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto font-normal">
             Transformamos tu presencia digital con estrategias innovadoras y resultados medibles
           </p>
           <a 
             href="#contacto"
-            className="button-gradient bg-gradient-to-r from-white via-purple-100 to-white text-purple-600 px-8 py-4 rounded-full font-semibold shadow-lg inline-flex items-center gap-2 group"
+            className="bg-white text-purple-700 hover:bg-purple-50 px-8 py-4 rounded-full font-bold shadow-xl inline-flex items-center gap-2 group transition-all transform hover:-translate-y-0.5"
           >
             Comenzar Ahora
             <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -310,24 +313,25 @@ function App() {
       {/* Biografía de la Fundadora Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
+          <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
             NUESTRA FUNDADORA
           </span>
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-600 mb-12">
             Biografía de la Fundadora
           </h2>
 
-          <div className="relative w-56 h-56 mx-auto mb-8">
+          <div className="relative w-64 h-64 mx-auto mb-8">
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-emerald-400 p-1.5 shadow-xl animate-float">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
-                alt="Emily Y. Morales Nova" 
-                className="w-full h-full object-cover rounded-full border-4 border-white"
+                src="/founder.jpg" 
+                onError={(e) => { e.currentTarget.src = "https://i.ibb.co/2dLGr4M/C8562504-A74-F-4866-9-E08-2-B886078632-A-Original.jpg"; }}
+                alt="Emily Y. Morales Nova - Fundadora Market Chic" 
+                className="w-full h-full object-cover rounded-full border-4 border-white shadow-inner"
               />
             </div>
           </div>
 
-          <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto font-normal">
             Conoce a la mente creativa detrás de Market Chic, una visionaria del marketing digital que está transformando la industria en República Dominicana. Con una sólida formación académica y años de experiencia en el campo, nuestra fundadora lidera con pasión y compromiso el crecimiento digital de nuestros clientes.
           </p>
         </div>
@@ -468,7 +472,7 @@ function App() {
               </div>
 
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSe-0iPq32jK4i1G93B74T-Y90X84f2B_mY7T9P3k-4573854/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfjNjhnHqegmfKT6q6I52OzjNaqeT47Ar6HAk1OO04PTbY41g/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 text-white py-3.5 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-95 shadow-lg shadow-purple-500/20 transition-all text-center"
