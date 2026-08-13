@@ -210,7 +210,7 @@ function App() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block shadow-sm">
               ACERCA DE NOSOTROS
             </span>
-            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mt-4 mb-4">
+            <h2 className="text-4xl font-extrabold animate-text-gradient mt-4 mb-4">
               Nuestra Historia
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
@@ -316,7 +316,7 @@ function App() {
           <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
             NUESTRA FUNDADORA
           </span>
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-emerald-600 mb-12">
+          <h2 className="text-4xl font-extrabold animate-text-gradient mb-12">
             Biografía de la Fundadora
           </h2>
 
@@ -344,7 +344,7 @@ function App() {
             <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
               NUESTROS SERVICIOS
             </span>
-            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
+            <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
               Soluciones Digitales Completas
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base">
@@ -367,7 +367,7 @@ function App() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
               NUESTROS PLANES
             </span>
-            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
+            <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
               Nuestros Planes
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base">
@@ -393,7 +393,7 @@ function App() {
           <span className="bg-emerald-500 text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wider inline-block mb-4 shadow-sm">
             CONTÁCTANOS
           </span>
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 mb-4">
+          <h2 className="text-4xl font-extrabold animate-text-gradient mb-4">
             ¿Listo para Comenzar?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm mb-12">
