@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="circular-clip">
+      <circle cx="256" cy="256" r="256" />
+    </clipPath>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="#8b5cf6" />
+  <image 
+    xlink:href="https://i.ibb.co/JjrJtDC/logo.png" 
+    x="0" 
+    y="0" 
+    width="512" 
+    height="512" 
+    clip-path="url(#circular-clip)" 
+  />
+</svg>
