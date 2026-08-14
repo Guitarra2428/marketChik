@@ -557,7 +557,6 @@ function App() {
             <p>&copy; {new Date().getFullYear()} Market Chic. Todos los derechos reservados.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-purple-600 transition-colors">Términos y Condiciones</a>
-              <a href="#" className="hover:text-purple-600 transition-colors">Política de Privacidad</a>
             </div>
           </div>
         </div>
