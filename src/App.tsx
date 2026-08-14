@@ -31,12 +31,12 @@ function Logo() {
         <img 
           src="/logo.png" 
           onError={(e) => { e.currentTarget.src = "https://i.ibb.co/JjrJtDC/logo.png"; }}
-          alt="Market Chic Logo" 
+          alt="MARKETCHIC Logo" 
           className="w-full h-full object-cover rounded-full bg-white"
         />
       </div>
       <span className="text-2xl font-bold text-gradient">
-        Market Chic
+        MARKETCHIC
       </span>
     </div>
   );
@@ -327,14 +327,14 @@ function App() {
               <img 
                 src="/founder.jpg" 
                 onError={(e) => { e.currentTarget.src = "https://i.ibb.co/2dLGr4M/C8562504-A74-F-4866-9-E08-2-B886078632-A-Original.jpg"; }}
-                alt="Emily Y. Morales Nova - Fundadora Market Chic" 
+                alt="Emily Y. Morales Nova - Fundadora MARKETCHIC" 
                 className="w-full h-full object-cover rounded-full border-4 border-white shadow-inner"
               />
             </div>
           </div>
 
           <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto font-normal">
-            Conoce a la mente creativa detrás de Market Chic, una visionaria del marketing digital que está transformando la industria en República Dominicana. Con una sólida formación académica y años de experiencia en el campo, nuestra fundadora lidera con pasión y compromiso el crecimiento digital de nuestros clientes.
+            Conoce a la mente creativa detrás de MARKETCHIC, una visionaria del marketing digital que está transformando la industria en República Dominicana. Con una sólida formación académica y años de experiencia en el campo, nuestra fundadora lidera con pasión y compromiso el crecimiento digital de nuestros clientes.
           </p>
         </div>
       </section>
@@ -429,7 +429,7 @@ function App() {
                   <div>
                     <h4 className="text-xs font-semibold text-gray-800">Teléfonos</h4>
                     <a href="tel:+18094278761" className="text-xs text-gray-500 block hover:text-purple-600 transition-colors">809-427-8761</a>
-                    <a href="tel:+18293200032" className="text-xs text-gray-500 block hover:text-purple-600 transition-colors">829-320-0032</a>
+                    <a href="tel:+18294401628" className="text-xs text-gray-500 block hover:text-purple-600 transition-colors">829-320-0032</a>
                   </div>
                 </div>
 
@@ -554,7 +554,7 @@ function App() {
           </div>
 
           <div className="border-t border-gray-200/60 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Market Chic. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} MARKETCHIC. Todos los derechos reservados.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-purple-600 transition-colors">Términos y Condiciones</a>
             </div>
